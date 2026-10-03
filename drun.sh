@@ -9,8 +9,6 @@ usage() {
 
 run() {
     exec docker run --rm \
-        -u "$(id -u):$(id -g)" \
-        -e HOME=/tmp \
         -v "$PWD:/app" -w /app \
         "$@"
 }
