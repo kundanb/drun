@@ -13,15 +13,12 @@ Scaffold projects with Docker on macOS. No Node.js install needed on your machin
 curl -fL https://raw.githubusercontent.com/kundanb/drun/main/install.sh | bash
 ```
 
-This installs `drun` to `~/.local/bin`. If that directory isn't on your `PATH`, add it:
+This installs `drun` to `~/.local/bin`. If that directory isn't on your `PATH`, the installer adds it to `~/.zshrc` for you.
+
+Then reload your shell and check:
 
 ```bash
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-```
-
-Then restart your terminal and check:
-
-```bash
+source ~/.zshrc
 drun
 ```
 
@@ -45,4 +42,10 @@ Run the install command again.
 
 ```bash
 rm ~/.local/bin/drun
+```
+
+Optionally, remove this line from `~/.zshrc` if the installer added it:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
 ```
