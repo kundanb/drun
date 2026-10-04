@@ -9,10 +9,14 @@ set -euo pipefail
 # Templates copied here by install.sh. No network needed at run time.
 TEMPLATES="$HOME/.local/share/drun/templates"
 
+# URL of the installer script for self-updating.
+INSTALL_URL="https://raw.githubusercontent.com/kundanb/drun/main/install.sh"
+
 # Print usage to stderr and exit with a failure code.
 usage() {
     echo "Usage: $(basename "$0") next <app-name>" >&2
     echo "       $(basename "$0") vite <app-name> <template>" >&2
+    echo "       $(basename "$0") update" >&2
     exit 1
 }
 
@@ -35,6 +39,11 @@ template() {
     cp -R "$TEMPLATES/$2/." "$1/"
 }
 
+# Update drun and its templates by running the official installer.
+update() {
+    curl -fsSL "$INSTALL_URL" | bash
+}
+
 # Dispatch on the first argument (empty string if none, to satisfy -u).
 case "${1:-}" in
     next)
@@ -50,6 +59,9 @@ case "${1:-}" in
         # `--` passes --template through npm to create-vite.
         run node:lts npm create vite@latest "$2" -- --template "$3"
         template "$2" vite
+        ;;
+    update|update-templates)
+        update
         ;;
     *)
         # Unknown or missing subcommand.

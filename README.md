@@ -10,7 +10,7 @@ Scaffold projects with Docker on macOS. No Node.js install needed on your machin
 ## Install
 
 ```bash
-curl -fL https://raw.githubusercontent.com/kundanb/drun/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kundanb/drun/main/install.sh | bash
 ```
 
 This installs:
@@ -51,7 +51,13 @@ Templates are copied from `~/.local/share/drun/templates` and overwrite files wi
 
 ## Update
 
-Run the install command again. This also refreshes the templates, and files removed upstream are removed locally.
+```bash
+drun update
+```
+
+Updates `drun` and refreshes the templates. Files removed upstream are removed locally.
+
+Alternatively, run the install command again.
 
 ## Uninstall
 

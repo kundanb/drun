@@ -31,7 +31,7 @@ trap 'rm -rf "$tmp"' EXIT
 
 # Download and unpack. --strip-components=1 drops the `drun-main/` prefix,
 # so files land directly in $tmp (e.g. $tmp/drun.sh, $tmp/templates/).
-curl -fL "$TARBALL" | tar -xz -C "$tmp" --strip-components=1
+curl -fsSL "$TARBALL" | tar -xz -C "$tmp" --strip-components=1
 
 # Only reached if the download succeeded (set -e aborts otherwise).
 mkdir -p "$BIN_DIR" "$DATA_DIR"
