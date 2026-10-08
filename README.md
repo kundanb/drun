@@ -54,6 +54,14 @@ drun vitepress <app-name>
 
 Runs `vitepress init` inside a `node:lts` container (it prompts for options as usual), then overlays the `vitepress` template on top of the generated app.
 
+### Starlight
+
+```bash
+drun starlight <app-name>
+```
+
+Runs `npm create astro@latest -- --template starlight` inside a `node:lts` container (it prompts for options as usual), then overlays the `starlight` template on top of the generated app.
+
 ### Templates
 
 Templates are copied from `~/.local/share/drun/templates` and overwrite files with the same name in the generated app (e.g. `package.json`, `.gitignore`). No network is needed for this step.

@@ -9,6 +9,7 @@ usage() {
     echo "Usage: $(basename "$0") next <app-name>" >&2
     echo "       $(basename "$0") vite <app-name> <template>" >&2
     echo "       $(basename "$0") vitepress|vp <app-name>" >&2
+    echo "       $(basename "$0") starlight <app-name>" >&2
     echo "       $(basename "$0") update" >&2
     exit 1
 }
@@ -47,6 +48,12 @@ case "${1:-}" in
             npx vitepress init
         '
         template vitepress
+        ;;
+    starlight)
+        [[ -n "${2:-}" ]] || usage
+        mkdir -p "$2" && cd "$2"
+        run node:lts npm create astro@latest . -- --template starlight
+        template starlight
         ;;
     update)
         update

@@ -1,0 +1,30 @@
+{
+  "name": "Starlight",
+
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+
+  // Enable to use Git and GitHub CLI in the container.
+  // "features": {
+  //   "ghcr.io/devcontainers/features/git:1": {},
+  //   "ghcr.io/devcontainers/features/github-cli:1": {}
+  // },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-containers",
+        "esbenp.prettier-vscode",
+        "astro-build.astro-vscode"
+      ]
+
+      // Enable to isolate Git from the host machine.
+      // "settings": {
+      //   "dev.containers.copyGitConfig": false,
+      //   "dev.containers.gitCredentialHelperConfigLocation": "none"
+      // }
+    }
+  }
+}
