@@ -1,5 +1,5 @@
 {
-  "name": "Vite",
+  "name": "VitePress",
 
   "dockerComposeFile": "compose.yaml",
   "service": "app",
@@ -16,7 +16,7 @@
       "extensions": [
         "ms-azuretools.vscode-containers",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "Vue.volar"
       ],
 
       "settings": {
