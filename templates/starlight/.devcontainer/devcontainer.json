@@ -17,7 +17,8 @@
       "extensions": [
         "ms-azuretools.vscode-containers",
         "esbenp.prettier-vscode",
-        "astro-build.astro-vscode"
+        "astro-build.astro-vscode",
+        "unifiedjs.vscode-mdx"
       ]
 
       // Enable to isolate Git from the host machine.
