@@ -6,10 +6,11 @@
   "workspaceFolder": "/app",
   "shutdownAction": "stopCompose",
 
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
-  },
+  // Enable to use Git and GitHub CLI in the container.
+  // "features": {
+  //   "ghcr.io/devcontainers/features/git:1": {},
+  //   "ghcr.io/devcontainers/features/github-cli:1": {}
+  // },
 
   "customizations": {
     "vscode": {
@@ -17,12 +18,13 @@
         "ms-azuretools.vscode-containers",
         "esbenp.prettier-vscode",
         "Vue.volar"
-      ],
+      ]
 
-      "settings": {
-        "dev.containers.copyGitConfig": false,
-        "dev.containers.gitCredentialHelperConfigLocation": "none"
-      }
+      // Enable to isolate Git from the host machine.
+      // "settings": {
+      //   "dev.containers.copyGitConfig": false,
+      //   "dev.containers.gitCredentialHelperConfigLocation": "none"
+      // }
     }
   }
 }
